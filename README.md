@@ -8,7 +8,7 @@ and simulate coupling and propagation of beams.
 
 A GUI, lpmodes_gui, allows modes to be solved, visualised and exported.
 
-![Example modes](/docs/source/modes.png)
+![Example modes](https://github.com/MikeHughesKent/lpmodes/raw/main/docs/source/modes.png)
 
 Full documentation is on [Read the docs](https://lpmodes.readthedocs.io/en/latest/index.html). 
 
@@ -32,7 +32,7 @@ Functions are provided to:
 
 A graphical user interface allow modes to be solved, visualised and exported.
 
-![lpmodes GUI screenshot](/docs/source/gui.png)
+![lpmodes GUI screenshot](https://github.com/MikeHughesKent/lpmodes/raw/main/docs/source/modes.png)
 
 Parameters of the fibre (NAs, core radius) and wavelength are defined in the 
 top left. Clicking 'Find Modes' then finds solutions. The table in the centre

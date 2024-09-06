@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lpmodes"
-version = "1.0.0"
+version = "1.0.1"
 description = "Solve modes for a step index multimode fibre and simulate beam coupling and propagation."
 readme = "README.md"
 authors = [{ name = "Michael Hughes", email = "m.r.hughes@kent.ac.uk" }]
