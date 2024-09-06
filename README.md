@@ -32,7 +32,7 @@ Functions are provided to:
 
 A graphical user interface allow modes to be solved, visualised and exported.
 
-![lpmodes GUI screenshot](https://github.com/MikeHughesKent/lpmodes/raw/main/docs/source/modes.png)
+![lpmodes GUI screenshot](https://github.com/MikeHughesKent/lpmodes/raw/main/docs/source/gui.png)
 
 Parameters of the fibre (NAs, core radius) and wavelength are defined in the 
 top left. Clicking 'Find Modes' then finds solutions. The table in the centre
