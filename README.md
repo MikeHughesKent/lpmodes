@@ -8,7 +8,7 @@ and simulate coupling and propagation of beams.
 
 A GUI, lpmodes_gui, allows modes to be solved, visualised and exported.
 
-![Example modes](/res/modes.png)
+![Example modes](/docs/source/modes.png)
 
 Full documentation is on [Read the docs](https://lpmodes.readthedocs.io/en/latest/index.html). 
 
