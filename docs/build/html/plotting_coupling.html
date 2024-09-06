@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plotting, Beam Coupling, Propagation &mdash; lpmodes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Fibre Properties" href="fibre_properties.html" />
+    <link rel="prev" title="Getting Started" href="getting_started.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            lpmodes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plotting, Beam Coupling, Propagation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#plotting-modes">Plotting modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coupling-into-modes">Coupling Into Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plotting-the-coupled-field">Plotting the Coupled Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#propagating-the-coupled-field">Propagating the Coupled Field</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fibre_properties.html">Fibre Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_the_gui.html">Using the GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_reference.html">Function Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mode.html">Mode Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solution.html">Solution Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">lpmodes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Plotting, Beam Coupling, Propagation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/plotting_coupling.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="plotting-beam-coupling-propagation">
+<h1>Plotting, Beam Coupling, Propagation<a class="headerlink" href="#plotting-beam-coupling-propagation" title="Permalink to this heading"></a></h1>
+<section id="plotting-modes">
+<h2>Plotting modes<a class="headerlink" href="#plotting-modes" title="Permalink to this heading"></a></h2>
+<p>Plotting modes is useful both for visualising modes, as well as performing
+numerical integration required for coupling in beams or determining the
+power in the core. Plotting is easiest to perform using the <code class="docutils literal notranslate"><span class="pre">Solution</span></code>
+class, although low-level functions can also be used directly.</p>
+<p>Assuming we already have a list of modes stored in <code class="docutils literal notranslate"><span class="pre">modes</span></code>, obtained from
+<code class="docutils literal notranslate"><span class="pre">lpmodes.find_modes()</span></code>. We need to define the size of the square grid,
+in pixels, and also in physical units:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grid_size</span> <span class="o">=</span> <span class="mi">150</span>        <span class="c1"># pixels</span>
+<span class="n">max_plot_radius</span> <span class="o">=</span> <span class="mi">15</span>   <span class="c1"># microns</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">max_plot_radius</span></code> is half of the width or height of the plot. For
+a core radius of 10 microns, a max_plot_radius of 15 microns will ensure all
+the core plus a reasonable extent of the cladding is plotted.</p>
+<p>We then create an instance of the <code class="docutils literal notranslate"><span class="pre">Solution</span></code> class. Creating this instance
+plots all the modes, and so this line may take several
+seconds to execute, depending on the number of modes and grid size chosen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span> <span class="o">=</span> <span class="n">lpmodes</span><span class="o">.</span><span class="n">Solution</span><span class="p">(</span><span class="n">modes</span><span class="p">,</span> <span class="n">grid_size</span><span class="p">,</span> <span class="n">max_plot_radius</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we do not specifiy the max_plot_radius, it will automatically chosen to be
+1.5 times the core_radius that the modes in <code class="docutils literal notranslate"><span class="pre">modes</span></code> were calculated for.</p>
+<p>The mode plots are now available as 3D numpy arrays. For example, plots of the
+amplitude of the cosine orientations are stored in <code class="docutils literal notranslate"><span class="pre">solution.mode_cos</span></code>. The
+3D array is organise as (mode number, x co-ord, y co-ord). To extract the
+2rd mode plot, for example, you can use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mode_3</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">mode_cos</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>which will return a 2D numpy array containing a plot of the 3rd mode. The
+sine orientations are stored in <code class="docutils literal notranslate"><span class="pre">mode_sin</span></code>, and intensity plots are stored
+in <code class="docutils literal notranslate"><span class="pre">mode_sin_intensity</span></code> and <code class="docutils literal notranslate"><span class="pre">mode_cos_intensity</span></code>.</p>
+<p>The mode details are now stored in <code class="docutils literal notranslate"><span class="pre">solution.modes</span></code>. If the index of a mode
+with specific l and m values is required, use the <code class="docutils literal notranslate"><span class="pre">find_mode_idx()</span></code> function, e.g.
+to obtain the plot of the l = 1, m = 2 mode:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mode_12</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">mode_cos</span><span class="p">[</span><span class="n">lpmodes</span><span class="o">.</span><span class="n">find_mode_idx</span><span class="p">(</span><span class="n">solution</span><span class="o">.</span><span class="n">modes</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+</pre></div>
+</div>
+</section>
+<section id="coupling-into-modes">
+<h2>Coupling Into Modes<a class="headerlink" href="#coupling-into-modes" title="Permalink to this heading"></a></h2>
+<p>To simulate couling a beam into the simulated fibre, we require a representation
+of the electric field as 2D complex numpy array. The array must have the same
+dimension and physical pixel size as the mode plots where created for.</p>
+<p>Functions are provided to generate plane waves (with a tilt) or Gaussian
+shaped beams, which are two common use cases. Assume we have created a
+<code class="docutils literal notranslate"><span class="pre">Solution</span></code> with a <code class="docutils literal notranslate"><span class="pre">grid_size</span></code> of 100 and a <code class="docutils literal notranslate"><span class="pre">max_plot_radius</span></code> of 15 microns.
+We can generated a Gaussian beam with a sigma of 5 microns, centred on the fibre,
+using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">field_size</span> <span class="o">=</span> <span class="n">max_plot_radius</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">g_field</span> <span class="o">=</span> <span class="n">lpmodes</span><span class="o">.</span><span class="n">gaussian_field</span><span class="p">(</span><span class="n">grid_size</span><span class="p">,</span> <span class="n">field_size</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We have set the field_size to twice the max_plot_radius because the mode plots
+run from <code class="docutils literal notranslate"><span class="pre">-max_plot_radius</span></code> to <code class="docutils literal notranslate"><span class="pre">+max_plot_radius</span></code>. To produce an offset
+beam, set <code class="docutils literal notranslate"><span class="pre">position</span></code> to a tuple of (x pos, y pos). The position is in microns
+relative to the centre of the field, and can can be positive or negative.</p>
+<p>The field can now be coupled in to the fibre using the <code class="docutils literal notranslate"><span class="pre">couple_field</span></code> method
+of the <code class="docutils literal notranslate"><span class="pre">Solution</span></code> class. Assuming we have created a solution stored in <code class="docutils literal notranslate"><span class="pre">solution</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span><span class="o">.</span><span class="n">couple_field</span><span class="p">(</span><span class="n">g_field</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The complex amplitude in each mode is now stored in <code class="docutils literal notranslate"><span class="pre">solution.cos_amp</span></code> and
+<code class="docutils literal notranslate"><span class="pre">solution.sin_amp</span></code>, for the sine and cosine oreientations of the modes. Each
+of these is a 1D complex numpy array. The amplitudes can be obtained using
+<code class="docutils literal notranslate"><span class="pre">np.abs(solution.sin_amp)</span></code>.</p>
+<p>The power in each mode (combined sine and cosine
+orientations) is stored in <code class="docutils literal notranslate"><span class="pre">solution.mode_power</span></code>. The total power coupled
+is stored in <code class="docutils literal notranslate"><span class="pre">solution.power_coupled</span></code>. If the input field is normalised to
+have a total power of 1, as the fields generated by <code class="docutils literal notranslate"><span class="pre">gaussian_field()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">tilted_field()</span></code> are, this will be the coupling efficiency.</p>
+</section>
+<section id="plotting-the-coupled-field">
+<h2>Plotting the Coupled Field<a class="headerlink" href="#plotting-the-coupled-field" title="Permalink to this heading"></a></h2>
+<p>A plot of the coupled field, as a 2D complex numpy array, is obtained using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">field</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">get_in_field</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>or the coupled intensity distribution using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">intensity</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">get_in_intensity</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The grid size and pixel size are as defined whent he modes and field to couple
+were plotted.</p>
+</section>
+<section id="propagating-the-coupled-field">
+<h2>Propagating the Coupled Field<a class="headerlink" href="#propagating-the-coupled-field" title="Permalink to this heading"></a></h2>
+<p>The field coupled into the fibre is propagated along a length of the fibre by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span> <span class="o">=</span> <span class="mi">2000</span>               <span class="c1">#microns</span>
+<span class="n">solution</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The complex amplitudes for each mode are then stored in the 1D arrays in
+<code class="docutils literal notranslate"><span class="pre">solution.prop_cos_amp</span></code> and <code class="docutils literal notranslate"><span class="pre">solution.prop_sin_amp</span></code>. The amplitudes do not
+change, only the phases. The total field after
+propgation is stored in <code class="docutils literal notranslate"><span class="pre">solution.prop_field</span></code> as a 2D complex numpy array, and
+the intensity distribution is in <code class="docutils literal notranslate"><span class="pre">solution.prop_intensity</span></code>, as a 2D
+real numpy array.</p>
+<p>To allow random rotations of the modes during propagation,
+pass the keyword argument <code class="docutils literal notranslate"><span class="pre">rotations</span> <span class="pre">=</span> <span class="pre">True</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="getting_started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fibre_properties.html" class="btn btn-neutral float-right" title="Fibre Properties" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Mike Hughes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

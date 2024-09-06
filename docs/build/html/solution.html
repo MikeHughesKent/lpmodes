@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solution Class &mdash; lpmodes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributions" href="contributing.html" />
+    <link rel="prev" title="Mode Class" href="mode.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            lpmodes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting_coupling.html">Plotting, Beam Coupling, Propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fibre_properties.html">Fibre Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_the_gui.html">Using the GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_reference.html">Function Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mode.html">Mode Class</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Solution Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">lpmodes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Solution Class</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/solution.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="solution-class">
+<h1>Solution Class<a class="headerlink" href="#solution-class" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="lpmodes.Solution">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">Solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_plot_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.Solution" title="Permalink to this definition"></a></dt>
+<dd><p>Class used to store a set of lp modes for a fibre and to perform operations
+that are applied to the whole set of modes.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>modes<span class="classifier">list</span></dt><dd><p>list of instances of Mode
+as generated by find_modes</p>
+</dd>
+</dl>
+</dd>
+<dt>Keyword Arguments:                      </dt><dd><dl class="simple">
+<dt>grid_size<span class="classifier">int, optional</span></dt><dd><p>The size of the grid for mode plotting. Defaults to 100.</p>
+</dd>
+<dt>max_plot_radius<span class="classifier">float, optional</span></dt><dd><p>The maximum  physical radius for plotting. If 
+None, it is set to 1.5 times the core radius.
+Defaults to None.</p>
+</dd>
+</dl>
+</dd>
+<dt>Attributes:</dt><dd><dl class="simple">
+<dt>modes<span class="classifier">list</span></dt><dd><p>A list of Mode instances, as generated by find_modes</p>
+</dd>
+<dt>num_modes<span class="classifier">int</span></dt><dd><p>The number of modes in the ‘modes’ list.</p>
+</dd>
+<dt>mode_l<span class="classifier">np.array</span></dt><dd><p>A 1D array storing the ‘l’ value for each mode.</p>
+</dd>
+<dt>mode_m<span class="classifier">np.array</span></dt><dd><p>A 1D array storing the ‘m’ value for each mode.</p>
+</dd>
+<dt>mode_cos<span class="classifier">np.array</span></dt><dd><p>A 3D array storing a plot of the amplitude of the 
+cosine component of each mode (mode, x, y)</p>
+</dd>
+<dt>mode_sin<span class="classifier">np.array</span></dt><dd><p>A 3D array storing a plot of the amplitude of the 
+sine component of each mode (mode, x, y)</p>
+</dd>
+<dt>mode_cos_intensity<span class="classifier">np.array</span></dt><dd><p>A 3D array storing a plot of the intensity of the 
+cosine component of each mode (mode, x, y)</p>
+</dd>
+<dt>mode_sin_intensity<span class="classifier">np.array</span></dt><dd><p>A 3D array storing a plot of the amplitude of the 
+sine component of each mode (mode, x, y)</p>
+</dd>
+<dt>cos_amp<span class="classifier">np.array</span></dt><dd><p>A 1D array storing the complex amplitude coupled into 
+the cosine version of each mode.</p>
+</dd>
+<dt>sin_amp<span class="classifier">np.array</span></dt><dd><p>A 1D array storing the complex amplitude coupled into 
+the sine version of each mode.</p>
+</dd>
+<dt>mode_power<span class="classifier">np.array</span></dt><dd><p>1 1D array storing the power coupled into each mode
+(total power in both orientations)</p>
+</dd>
+<dt>power_coupled<span class="classifier">float</span></dt><dd><p>Total power coupled into fibre</p>
+</dd>
+<dt>prop_cos_amp<span class="classifier">np.array</span></dt><dd><p>A 1D array storing the complex amplitude coupled into 
+the cosine version of each mode after propagation to
+end of fibre.</p>
+</dd>
+<dt>prop_sin_amp<span class="classifier">np.array</span></dt><dd><p>A 1D array storing the complex amplitude coupled into 
+the sine version of each mode after propagation to
+end of fibre.</p>
+</dd>
+<dt>prop_field<span class="classifier">np.array</span></dt><dd><p>2D complex array containing plot of field after
+propagation to end of fibre</p>
+</dd>
+<dt>prop_intensity<span class="classifier">np.array</span></dt><dd><p>2D array containing plot of intensity after
+propagation to end of fibre</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="lpmodes.Solution.couple_field">
+<span class="sig-name descname"><span class="pre">couple_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.Solution.couple_field" title="Permalink to this definition"></a></dt>
+<dd><p>Couples an input field into the modes and calculates the resulting mode amplitudes.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>field<span class="classifier">np.array</span></dt><dd><p>The input field to be coupled into the modes, as a 2D
+complex numpy array. This must be on a grid that is the same
+dimensions and with the same pixel size as defined by
+the grid_size and max_plot_radius argument to __init__.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lpmodes.Solution.get_in_amplitudes">
+<span class="sig-name descname"><span class="pre">get_in_amplitudes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.Solution.get_in_amplitudes" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the input (i.e. before propagation) coupled amplitudes for 
+the cosine and sine components of each mode.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>tuple<span class="classifier">(np.array, np.array)</span></dt><dd><p>A tuple containing the two 1D numpy arrays containng the
+input cosine amplitudes and sine amplitudes.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lpmodes.Solution.get_in_field">
+<span class="sig-name descname"><span class="pre">get_in_field</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.Solution.get_in_field" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the input field (i.e. before propagation) as represented 
+as a superposition of modes with their respective input amplitudes.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>np.array : The input field as a 2D complex numpy array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lpmodes.Solution.get_in_intensity">
+<span class="sig-name descname"><span class="pre">get_in_intensity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.Solution.get_in_intensity" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the input power (intensity) distribution 
+(i.e. before propagation) as represented as a superposition of modes 
+with their respective input amplitudes, all squared.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>np.array : The input power (intensity map) as a 2D array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lpmodes.Solution.get_out_amplitudes">
+<span class="sig-name descname"><span class="pre">get_out_amplitudes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.Solution.get_out_amplitudes" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the output amplitudes for the cosine and sine components 
+after propagation.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>tuple<span class="classifier">(np.array, np.array)</span></dt><dd><p>A tuple containing the two 1D numpy arrays containng the
+input cosine amplitudes and sine amplitudes.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lpmodes.Solution.get_out_field">
+<span class="sig-name descname"><span class="pre">get_out_field</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.Solution.get_out_field" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the input power (intensity) distribution 
+(i.e. before propagation) as represented as a superposition of modes 
+with their respective input amplitudes, all squared.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>np.array : The output power (intensity map) as a 2D array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lpmodes.Solution.get_out_intensity">
+<span class="sig-name descname"><span class="pre">get_out_intensity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.Solution.get_out_intensity" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the output power (intensity) distribution 
+(i.e. after propagation) as represented as a superposition of modes 
+with their respective output amplitudes, all squared.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>np.array : The output power (intensity map) as a 2D array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lpmodes.Solution.plot_amplitude">
+<span class="sig-name descname"><span class="pre">plot_amplitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.Solution.plot_amplitude" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an amplitude plot of the sine and cosines components of the 
+mode with the specified l and m. Returns None, None if mode is not present.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>l<span class="classifier">int</span></dt><dd><p>azimuthal mode number</p>
+</dd>
+<dt>m<span class="classifier">int</span></dt><dd><p>radial mode number</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>np.array<span class="classifier">2D numpy array containing plot of mode amplitude. Will be</span></dt><dd><p>None if mode is not present.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lpmodes.Solution.plot_intensity">
+<span class="sig-name descname"><span class="pre">plot_intensity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.Solution.plot_intensity" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an intensity plot of the sine and cosines components of the 
+mode with the specified l and m. Returns None, None if mode is not present.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>l<span class="classifier">int</span></dt><dd><p>azimuthal mode number</p>
+</dd>
+<dt>m<span class="classifier">int</span></dt><dd><p>radial mode number</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>np.array<span class="classifier">2D numpy array containing plot of mode intensity. Will be</span></dt><dd><p>None if mode is not present.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lpmodes.Solution.plot_mode_coupling">
+<span class="sig-name descname"><span class="pre">plot_mode_coupling</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.Solution.plot_mode_coupling" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a plot, as a 2D numpy array, showing the power coupled
+into each mode, with the modes organised by l and m.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lpmodes.Solution.propagate">
+<span class="sig-name descname"><span class="pre">propagate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.Solution.propagate" title="Permalink to this definition"></a></dt>
+<dd><p>Propagates the modes through a fibre over a given distance, storing
+the new complex amplitudes.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>distance<span class="classifier">float</span></dt><dd><p>The distance over which the modes are propagated.</p>
+</dd>
+</dl>
+</dd>
+<dt>Keyword Arguments:</dt><dd><dl class="simple">
+<dt>rotations<span class="classifier">bool, optional</span></dt><dd><p>If True, applies random rotations of each mode during 
+propagation. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lpmodes.Solution.set_amplitudes">
+<span class="sig-name descname"><span class="pre">set_amplitudes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cos_amp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sin_amp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.Solution.set_amplitudes" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the amplitude coupled into each mode.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>cos_amp<span class="classifier">np.array</span></dt><dd><p>1D array of floats, amplitude for cosine version of mode</p>
+</dd>
+<dt>sin_amp<span class="classifier">np.array</span></dt><dd><p>1D array of floats, amplitude for sine (i.e. rotated) version of mode</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lpmodes.Solution.set_random_amplitudes">
+<span class="sig-name descname"><span class="pre">set_random_amplitudes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.Solution.set_random_amplitudes" title="Permalink to this definition"></a></dt>
+<dd><p>Sets random amplitudes for the cosine and sine components of each mode.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mode.html" class="btn btn-neutral float-left" title="Mode Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Mike Hughes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

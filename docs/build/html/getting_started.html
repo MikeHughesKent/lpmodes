@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started &mdash; lpmodes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Plotting, Beam Coupling, Propagation" href="plotting_coupling.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            lpmodes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#finding-allowed-modes">Finding Allowed Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plotting-modes">Plotting Modes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plotting_coupling.html">Plotting, Beam Coupling, Propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fibre_properties.html">Fibre Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_the_gui.html">Using the GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_reference.html">Function Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mode.html">Mode Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solution.html">Solution Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">lpmodes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/getting_started.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h1>
+<p>lpmodes can be imported using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lpmodes</span>
+</pre></div>
+</div>
+<p>If you have not installed lpmodes using pip, you must make sure that the <code class="docutils literal notranslate"><span class="pre">lpmodes\src</span></code>
+folder is in your python path.</p>
+<section id="finding-allowed-modes">
+<h2>Finding Allowed Modes<a class="headerlink" href="#finding-allowed-modes" title="Permalink to this heading"></a></h2>
+<p>The first step is to define the parameters of the fibre you wish to model,
+specifically the core radius and refractive index and the cladding refractive
+index, and the wavelength of light you will simulate, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">core_n</span> <span class="o">=</span> <span class="mf">1.4</span>
+<span class="n">cladding_n</span> <span class="o">=</span> <span class="mf">1.38</span>
+<span class="n">core_radius</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">wavelength</span> <span class="o">=</span> <span class="mf">0.5</span>
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">core_radius</span></code> and <code class="docutils literal notranslate"><span class="pre">wavelength</span></code> are specified in units of microns.</p>
+<p>The modes are then solved using lpmodes.find_modes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modes</span> <span class="o">=</span> <span class="n">lpmodes</span><span class="o">.</span><span class="n">find_modes</span><span class="p">(</span><span class="n">core_radius</span><span class="p">,</span> <span class="n">core_n</span><span class="p">,</span> <span class="n">cladding_n</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">modes</span></code> is a python list. Each element in the list is an instance of the
+<code class="docutils literal notranslate"><span class="pre">Mode</span></code> class. To determine how many modes were found, look at the length of
+the list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num_modes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">modes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Modes with l &gt; 0 have two orientations (the sin and cos components). The total
+number of modes including these orientations can be determined by passing the
+list of modes to <code class="docutils literal notranslate"><span class="pre">num_rotated_modes</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">total_num_modes</span> <span class="o">=</span> <span class="n">lpmodes</span><span class="o">.</span><span class="n">num_rotated_modes</span><span class="p">(</span><span class="n">modes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can extract an individual mode from the list using
+indexing, for example the third mode is found using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mode</span> <span class="o">=</span> <span class="n">modes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The parameters of the mode or stored as fields of the instances, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mode</span><span class="o">.</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>displays the l value. The other fields are <code class="docutils literal notranslate"><span class="pre">m</span></code>, <code class="docutils literal notranslate"><span class="pre">u</span></code>, <code class="docutils literal notranslate"><span class="pre">beta</span></code>, <code class="docutils literal notranslate"><span class="pre">n_eff</span></code>, <code class="docutils literal notranslate"><span class="pre">core_radius</span></code>,
+<code class="docutils literal notranslate"><span class="pre">wavelength</span></code>.</p>
+<p>The modes are ordered by l and then m. To extract the mode with a specified l or m
+value from the list, use <code class="docutils literal notranslate"><span class="pre">find_mode_idx()</span></code> to determine the index of that mode,
+for example from of list of modes in <code class="docutils literal notranslate"><span class="pre">modes</span></code>, for l = 1, m = 3:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">lpmodes</span><span class="o">.</span><span class="n">find_mode_idx</span><span class="p">(</span><span class="n">modes</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or use <code class="docutils literal notranslate"><span class="pre">find_mode</span></code> to get the mode directly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mode</span> <span class="o">=</span> <span class="n">lpmodes</span><span class="o">.</span><span class="n">find_mode</span><span class="p">(</span><span class="n">modes</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="plotting-modes">
+<h2>Plotting Modes<a class="headerlink" href="#plotting-modes" title="Permalink to this heading"></a></h2>
+<p>Amplitude or intensity plots of a mode can be created as numpy arrays using
+the <code class="docutils literal notranslate"><span class="pre">plot_amplitude</span></code> and <code class="docutils literal notranslate"><span class="pre">plot_intensity</span></code> methods of the mode class.</p>
+<p>We first need to define the size of the square grid, in pixels, and also in
+physical units:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grid_size</span> <span class="o">=</span> <span class="mi">150</span>        <span class="c1"># pixels</span>
+<span class="n">max_plot_radius</span> <span class="o">=</span> <span class="mi">15</span>   <span class="c1"># microns</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">max_plot_radius</span></code> is half of the width or height of the plot. For
+a core radius of 10 microns, a max_plot_radius of 15 microns will ensure all
+the core plus a reasonable extent of the cladding is plotted.</p>
+<p>Ie, if we have a single mode stored in <code class="docutils literal notranslate"><span class="pre">mode</span></code>, then we can call:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mode_plot</span> <span class="o">=</span> <span class="n">mode</span><span class="o">.</span><span class="n">plot_amplitude</span><span class="p">(</span><span class="n">grid_size</span><span class="p">,</span> <span class="n">max_plot_radius</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can then display this, for example, using a matplotlib figure. The package
+has a function  <code class="docutils literal notranslate"><span class="pre">ampcol()</span></code> to generate a convenient colormap for displaying
+amplitude plots, with blue for negative values, red for positive values and
+white for zero:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">max_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">mode_plot</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mode_plot</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">lpmodes</span><span class="o">.</span><span class="n">ampcol</span><span class="p">(),</span> <span class="n">vmin</span> <span class="o">=</span> <span class="o">-</span><span class="n">max_val</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="n">max_val</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The intensity plot can be obtained as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mode_plot_intensity</span> <span class="o">=</span> <span class="n">mode</span><span class="o">.</span><span class="n">plot_intensity</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mode_plot</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this case the <code class="docutils literal notranslate"><span class="pre">ampcol()</span></code> colormap is less useful as all values are
+positive, and so any standard colormap may be used.</p>
+<p>These functions returns the cosine orientation of the modes. The sine orientations
+are obtained using <code class="docutils literal notranslate"><span class="pre">plot_amplitude_rotated()</span></code> and <code class="docutils literal notranslate"><span class="pre">plot_intensity_rotated()</span></code>.
+For l = 0 modes, the two orientations are identical.</p>
+<p>If you would like to plot all the modes, rather than calling the plot functions
+on each mode in the list, you can use the Solution class. This also allows
+more advanced operations such as coupling in beams and propagating along the
+fibre.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plotting_coupling.html" class="btn btn-neutral float-right" title="Plotting, Beam Coupling, Propagation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Mike Hughes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

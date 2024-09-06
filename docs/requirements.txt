@@ -1,0 +1,6 @@
+sphinx-rtd-theme==1.2.2
+matplotlib>=3.3.4
+numpy>=1.18
+Pillow>=9.3.0
+scipy>=1.7.3
+

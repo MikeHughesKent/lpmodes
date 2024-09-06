@@ -1,0 +1,115 @@
+---------------
+Getting Started
+---------------
+
+lpmodes can be imported using::
+
+    import lpmodes
+
+If you have not installed lpmodes using pip, you must make sure that the ``lpmodes\src`` 
+folder is in your python path.
+
+^^^^^^^^^^^^^^^^^^^^^
+Finding Allowed Modes
+^^^^^^^^^^^^^^^^^^^^^
+
+The first step is to define the parameters of the fibre you wish to model, 
+specifically the core radius and refractive index and the cladding refractive
+index, and the wavelength of light you will simulate, for example::
+    
+    core_n = 1.4
+    cladding_n = 1.38
+    core_radius = 10
+    wavelength = 0.5
+    
+Note that the ``core_radius`` and ``wavelength`` are specified in units of microns.
+
+The modes are then solved using lpmodes.find_modes::
+    
+    modes = lpmodes.find_modes(core_radius, core_n, cladding_n, wavelength)
+        
+``modes`` is a python list. Each element in the list is an instance of the
+``Mode`` class. To determine how many modes were found, look at the length of 
+the list::
+
+    num_modes = len(modes)
+    
+Modes with l > 0 have two orientations (the sin and cos components). The total
+number of modes including these orientations can be determined by passing the
+list of modes to ``num_rotated_modes``::
+
+    total_num_modes = lpmodes.num_rotated_modes(modes) 
+    
+You can extract an individual mode from the list using
+indexing, for example the third mode is found using::
+
+    mode = modes[2]
+    
+The parameters of the mode are stored as fields of the instances, for example::
+
+    print(mode.l)    
+    
+displays the l value. The other fields are ``m``, ``u``, ``beta``, ``n_eff``, ``core_radius``,
+``wavelength``.
+
+The modes are ordered by l and then m. To extract the mode with a specified l or m 
+value from the list, use ``find_mode_idx()`` to determine the index of that mode, 
+for example from of list of modes in ``modes``, for l = 1, m = 3::
+
+    idx = lpmodes.find_mode_idx(modes, 1, 3)
+    
+or use ``find_mode`` to get a referene to the mode directly::
+
+    mode = lpmodes.find_mode(modes, 1,3)
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Plotting Modes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Amplitude or intensity plots of a mode can be created as numpy arrays using
+the ``plot_amplitude`` and ``plot_intensity`` methods of the mode class. 
+
+We first need to define the size of the square grid, in pixels, and also in 
+physical units::
+    
+    grid_size = 150        # pixels
+    max_plot_radius = 15   # microns
+    
+The ``max_plot_radius`` is half of the width or height of the plot. For  
+a core radius of 10 microns, a max_plot_radius of 15 microns will ensure all
+the core plus a reasonable extent of the cladding is plotted.
+
+If we have a single mode stored in ``mode``, then we can then call::
+
+    mode_plot = mode.plot_amplitude(grid_size, max_plot_radius)
+    
+which returns the plot as a numpy array. We can then display this, for example,
+using a matplotlib figure. The package
+has a function  ``ampcol()`` to generate a convenient colormap for displaying 
+amplitude plots, with blue for negative values, red for positive values and
+white for zero::
+
+    plt.figure(dpi=150)
+    max_val = np.max(np.abs(mode_plot))
+    plt.imshow(mode_plot, cmap = lpmodes.ampcol(), vmin = -max_val, vmax = max_val)
+
+The intensity plot can be obtained as follows::
+
+    mode_plot = mode.plot_intensity()
+    plt.figure(dpi=150)
+    plt.imshow(mode_plot)
+ 
+In this case the ``ampcol()`` colormap is less useful as all values are
+positive, and so any standard colormap may be used.
+
+These functions return the cosine orientation of the modes. The sine orientations
+are obtained using ``plot_amplitude_rotated()`` and ``plot_intensity_rotated()``.
+For l = 0 modes, the two orientations are identical.
+   
+If you would like to plot all the modes, rather than calling the plot functions
+on each mode in the list, you can use the ``Solution`` class. This also allows
+more advanced operations such as coupling in beams and propagating along the
+fibre.    
+
+

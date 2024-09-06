@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Function Reference &mdash; lpmodes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Mode Class" href="mode.html" />
+    <link rel="prev" title="Using the GUI" href="using_the_gui.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            lpmodes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting_coupling.html">Plotting, Beam Coupling, Propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fibre_properties.html">Fibre Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_the_gui.html">Using the GUI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Function Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mode-finding-and-handling">Mode Finding and Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fibre-properties">Fibre Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mode-and-field-plotting">Mode and Field Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coupling-and-propagation">Coupling and Propagation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#field-simulations">Field Simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#import-and-export">Import and Export</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mode.html">Mode Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solution.html">Solution Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">lpmodes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Function Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/function_reference.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="function-reference">
+<h1>Function Reference<a class="headerlink" href="#function-reference" title="Permalink to this heading"></a></h1>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="Mode">
+<span class="sig-name descname"><span class="pre">Mode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Mode" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Stores properties of a single mode, and has methods for plotting mode. See <a class="reference external" href="mode.html">Mode class</a> for details.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="Solution">
+<span class="sig-name descname"><span class="pre">Solution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Solution" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Stores a complete fibre solution, including modes and plot of modes, with various methods
+for coupling in beams and propagating along the fibre. See <a class="reference external" href="solution.html">Solution class</a> for details.</p>
+</section>
+<section id="mode-finding-and-handling">
+<h2>Mode Finding and Handling<a class="headerlink" href="#mode-finding-and-handling" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.find_modes">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">find_modes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">core_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_core</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cladding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.find_modes" title="Permalink to this definition"></a></dt>
+<dd><p>Finds all LP modes for a step index fibre by finding solutions to the
+equation</p>
+<dl>
+<dt>besselj(l, u) / (u * besselj(l - 1, u))</dt><dd><blockquote>
+<div><p>= besselk(l, w) / (w * besselk(l - 1, w))</p>
+</div></blockquote>
+<dl class="simple">
+<dt>where w = sqrt(v^2-u^2) and </dt><dd><p>v = (2*pi*core_radius/wavelength)*sqrt(core_n^2-cladding_n^2)</p>
+</dd>
+</dl>
+</dd>
+<dt>Arguments: </dt><dd><dl class="simple">
+<dt>core_radius<span class="classifier">float</span></dt><dd><p>radius of the core in microns</p>
+</dd>
+<dt>n_core<span class="classifier">float</span></dt><dd><p>core refractive index</p>
+</dd>
+<dt>n_cladding<span class="classifier">float</span></dt><dd><p>cladding refractive index</p>
+</dd>
+<dt>wavelength<span class="classifier">float</span></dt><dd><p>wavelength of light in microns</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>Mode           : instance of Mode class</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.power_in_core">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">power_in_core</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_plot_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.power_in_core" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates fraction of mode power that lies within core radius. The
+results will be more accurate if a larger grid_size is used. The 
+max_plot_radius should be significantly larger than the core radius (e.g. 
+1.5 times as large).</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>mode<span class="classifier">instance of Mode</span></dt><dd><p>as created by find_modes</p>
+</dd>
+</dl>
+</dd>
+<dt>Keyword Arguments:</dt><dd><dl class="simple">
+<dt>grid_size<span class="classifier">int</span></dt><dd><p>size of plot in pixels (square). Defaults to 100</p>
+</dd>
+<dt>max_plot_radius<span class="classifier">float, optional</span></dt><dd><p>radial distance at edge of plot, microns. Defaults
+to 1.5 times the core radius.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:        </dt><dd><p>float           : fraction of power in core</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.find_mode">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">find_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.find_mode" title="Permalink to this definition"></a></dt>
+<dd><p>In a list of modes (instances of Mode) returns the mode with
+the specified l and m values.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>modes<span class="classifier">list of instances of Mode class</span></dt><dd><p>modes as returned by find_modes</p>
+</dd>
+<dt>l<span class="classifier">int</span></dt><dd><p>azimuthal mode number</p>
+</dd>
+<dt>m<span class="classifier">int</span></dt><dd><p>radial mode number</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>Mode<span class="classifier">instance of Mode class, mode with required l and m </span></dt><dd><p>(or None if not present)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.find_mode_idx">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">find_mode_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.find_mode_idx" title="Permalink to this definition"></a></dt>
+<dd><p>In a list of modes (instances of Mode) find the index of the mode with
+the specififed l and m values.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>modes<span class="classifier">list of Mode</span></dt><dd><p>modes as returned by find_modes</p>
+</dd>
+<dt>l<span class="classifier">int</span></dt><dd><p>azimuthal mode number</p>
+</dd>
+<dt>m<span class="classifier">int</span></dt><dd><p>radial mode number</p>
+</dd>
+</dl>
+</dd>
+<dt>Rerturns:</dt><dd><dl class="simple">
+<dt>idx<span class="classifier">int</span></dt><dd><p>index of required mode (or None if not present)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.num_rotated_modes">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">num_rotated_modes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.num_rotated_modes" title="Permalink to this definition"></a></dt>
+<dd><p>Returns number of modes when rotations are counted as separate modes.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>modes<span class="classifier">list of instances of Mode</span></dt><dd><p>as returned by find_modes</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns: </dt><dd><p>int        : number of modes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="fibre-properties">
+<h2>Fibre Properties<a class="headerlink" href="#fibre-properties" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.est_num_modes">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">est_num_modes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">core_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_core</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cladding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.est_num_modes" title="Permalink to this definition"></a></dt>
+<dd><p>Estimates number of modes supported by a fibre using V number. Includes
+polarisation modes, so divide by 2 to get close to number of modes that
+will be found by find_modes (also need to include rotations for modes 
+with m &gt; 1).</p>
+<dl class="simple">
+<dt>Arguments: </dt><dd><dl class="simple">
+<dt>core_radius<span class="classifier">float</span></dt><dd><p>radius of the core in microns</p>
+</dd>
+<dt>n_core<span class="classifier">float</span></dt><dd><p>core refractive index</p>
+</dd>
+<dt>n_cladding<span class="classifier">float</span></dt><dd><p>cladding refractive index</p>
+</dd>
+<dt>wavelength<span class="classifier">float</span></dt><dd><p>wavelength of light in microns</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>int            : estimated number of modes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.fibre_na">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">fibre_na</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_core</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cladding</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.fibre_na" title="Permalink to this definition"></a></dt>
+<dd><p>Returns NA of fibre with specified core and cladding refractive index</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>n_core<span class="classifier">float </span></dt><dd><p>core refractive index</p>
+</dd>
+<dt>n_cladding<span class="classifier">float</span></dt><dd><p>cladding refractive index</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>float      : numerical aperture</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.acceptance_angle">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">acceptance_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_core</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cladding</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.acceptance_angle" title="Permalink to this definition"></a></dt>
+<dd><p>Returns acceptance angle in degrees of fibre with spcecified core and cladding
+refractive index.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>n_core<span class="classifier">float</span></dt><dd><p>core refractive index</p>
+</dd>
+<dt>n_cladding<span class="classifier">float</span></dt><dd><p>cladding refractive index</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>float      : angle in degrees</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="mode-and-field-plotting">
+<h2>Mode and Field Plotting<a class="headerlink" href="#mode-and-field-plotting" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.plot_modes_amplitude">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">plot_modes_amplitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_plot_radius</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.plot_modes_amplitude" title="Permalink to this definition"></a></dt>
+<dd><p>Returns ‘plots’ of modes in a list of modes as numpy arrays. Both the 
+cosine and sine versions are returned, as two separate 3D numpy arrays.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>modes<span class="classifier">list of instances of Mode</span></dt><dd><p>list of modes, as returned by find_modes</p>
+</dd>
+<dt>grid_size<span class="classifier">int</span></dt><dd><p>size of plot in pixels (square)</p>
+</dd>
+<dt>max_plot_radius<span class="classifier">float</span></dt><dd><p>radial distance at edge of plot, microns</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>np.array<span class="classifier">3D array, plots of sine versions of modes, </span></dt><dd><p>ordered (mode, x, y)</p>
+</dd>
+<dt>np.array<span class="classifier">3D array, plots of sine versions of modes, </span></dt><dd><p>ordered (mode, x, y)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.plot_modes_intensity">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">plot_modes_intensity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_plot_radius</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.plot_modes_intensity" title="Permalink to this definition"></a></dt>
+<dd><p>Returns ‘plots’ of intensity of modes in a list of modes as numpy arrays. Both the 
+cosine and sine versions are returned, as two separate 3D numpy arrays.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>modes<span class="classifier">list of instances of Mode class</span></dt><dd><p>list of modes, as returned by find_modes</p>
+</dd>
+<dt>grid_size<span class="classifier">int</span></dt><dd><p>size of plot in pixels (square)</p>
+</dd>
+<dt>max_plot_radius<span class="classifier">float</span></dt><dd><p>radial distance at edge of plot, microns</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>np.array<span class="classifier">3D float, plots of intensity of modes, orderd (mode, x, y). </span></dt><dd><p>Cosine version</p>
+</dd>
+<dt>np.array<span class="classifier">3D float, plots of intensity of modes, orderd (mode, x, y). </span></dt><dd><p>Sine version</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.plot_field">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">plot_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode_cos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode_sin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode_cos_coupling</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode_sin_coupling</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.plot_field" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the combined optical field from cosine and sine mode components 
+and their respective couplings.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>mode_cos<span class="classifier">np.array</span></dt><dd><p>3D array of plot of cos components of modes 
+(mode, x, y)</p>
+</dd>
+<dt>mode_sin<span class="classifier">list of np.array</span></dt><dd><p>3D array of plot of sin components of modes 
+(mode, x, y)</p>
+</dd>
+<dt>mode_cos_coupling<span class="classifier">np.array</span></dt><dd><p>1D Array of coupling coefficients for the cos
+components of the modes.</p>
+</dd>
+<dt>mode_sin_coupling<span class="classifier">np.array</span></dt><dd><p>1D Array of coupling coefficients for the sine
+components of the modes.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>np.array<span class="classifier">The combined optical field as a 2D complex numpy </span></dt><dd><p>array (x,y)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.vis_all_modes">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">vis_all_modes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.vis_all_modes" title="Permalink to this definition"></a></dt>
+<dd><p>Displays matplotlib plot of all modes in a single figure, arranged 
+by l and m.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>modes<span class="classifier">list of instances of Mode</span></dt><dd><p>as created by find_modes</p>
+</dd>
+</dl>
+</dd>
+<dt>Optional Keyword Arguments:</dt><dd><dl class="simple">
+<dt>intensity<span class="classifier">boolean</span></dt><dd><p>If True, intensity of mode will be plotted, otherwise
+default is to plot complex amplitude</p>
+</dd>
+<dt>rotated<span class="classifier">boolean</span></dt><dd><p>If True, the sine version will be plotted, otherwise
+default it to plot cosine</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>fig       : handle to figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.ampcol">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">ampcol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.ampcol" title="Permalink to this definition"></a></dt>
+<dd><p>Generates a colour map that is useful for plotting amplitude maps.
+The colour map runs from red to blue, with white in the middle.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>LinearSegmentedColormap : colormap</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="coupling-and-propagation">
+<h2>Coupling and Propagation<a class="headerlink" href="#coupling-and-propagation" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.couple_beam">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">couple_beam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes_cos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes_sin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.couple_beam" title="Permalink to this definition"></a></dt>
+<dd><p>Determines power from complex field that will be coupled into each mode.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>field:      np.array</dt><dd><p>2D complex array representing E-field to be coupled</p>
+</dd>
+<dt>modes_cos<span class="classifier">np.array</span></dt><dd><p>plot of cosine version of mode</p>
+</dd>
+<dt>modes_sin<span class="classifier">np.array</span></dt><dd><p>plot of sine version of mode</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>np.array  : 1D array, amplitude in each cosine version
+np.array  : 1D array, amplitude in each sine version
+np.array  : 1D array, power in each mode</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.propagate_through_fibre">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">propagate_through_fibre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode_cos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode_sin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode_coupling_cos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode_coupling_sin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.propagate_through_fibre" title="Permalink to this definition"></a></dt>
+<dd><p>Propagates the given modes through a fibre over a specified distance, optionally applying mode rotations.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>modes<span class="classifier">list</span></dt><dd><p>A list of mode objects, where each mode has a beta attribute.</p>
+</dd>
+<dt>mode_cos<span class="classifier">np.array</span></dt><dd><p>The cosine components of the mode fields.</p>
+</dd>
+<dt>mode_sin<span class="classifier">np.array</span></dt><dd><p>The sine components of the mode fields.</p>
+</dd>
+<dt>mode_coupling_cos: np.array</dt><dd><p>The initial amplitude coupling into the cosine version of each mode.</p>
+</dd>
+<dt>mode_coupling_sin: np.array</dt><dd><p>The initial amplitude coupling into the sine version of each mode.</p>
+</dd>
+<dt>distance<span class="classifier">float</span></dt><dd><p>The distance over which the modes are propagated.</p>
+</dd>
+</dl>
+</dd>
+<dt>Keyword Arguments:</dt><dd><dl class="simple">
+<dt>rotations<span class="classifier">bool, optional</span></dt><dd><p>If True, random power redistributions between cosine and sine components 
+are applied during propagation. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>tuple<span class="classifier">(np.array, np.array, np.array, np.array)</span></dt><dd><ul class="simple">
+<li><p>end_field (np.array): The field at the end of the fibre after propagation.</p></li>
+<li><p>end_intensity (np.array): The intensity at the end of the fibre after propagation.</p></li>
+<li><p>end_mode_coupling_cos (np.array): The final amplitude coupling into the cosine version of each mode.</p></li>
+<li><p>end_mode_coupling_sin (np.array): The final amplitude coupling into the sine version of each mode.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.mode_coupling_plot">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">mode_coupling_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode_coupling_cos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode_coupling_sin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.mode_coupling_plot" title="Permalink to this definition"></a></dt>
+<dd><p>Generates a 2D numpy array to show amplitude in each mode. Array is
+organied by l and m.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>modes<span class="classifier">list of instances of Mode</span></dt><dd><p>as created by find_modes</p>
+</dd>
+<dt>mode_coupling_cos<span class="classifier">np.array</span></dt><dd><p>1D numpy array giving amplitude in the cosine
+component of each mode</p>
+</dd>
+<dt>mode_coupling_sin<span class="classifier">np.array</span></dt><dd><p>1D numpy array giving amplitude in the sine
+component of each mode</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>mode_coupling<span class="classifier">np.array</span></dt><dd><p>2D array (l,m) with ampitude in each mode</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="field-simulations">
+<h2>Field Simulations<a class="headerlink" href="#field-simulations" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.tilted_field">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">tilted_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tilt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.tilted_field" title="Permalink to this definition"></a></dt>
+<dd><p>Generates a (square) complex field with a tilt.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>grid_size<span class="classifier">int</span></dt><dd><p>number of pixels in each direction</p>
+</dd>
+<dt>field_size<span class="classifier">float</span></dt><dd><p>real size of field in microns</p>
+</dd>
+<dt>wavelength<span class="classifier">float</span></dt><dd><p>wavelength of light in microns</p>
+</dd>
+<dt>tilt<span class="classifier">float</span></dt><dd><p>tilt of field in radians</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>np.array      : 2D complex array containing field</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.gaussian_field">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">gaussian_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.gaussian_field" title="Permalink to this definition"></a></dt>
+<dd><p>Generates a (square) complex Gaussian field.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>grid_size<span class="classifier">int</span></dt><dd><p>number of pixels in each direction</p>
+</dd>
+<dt>field_size<span class="classifier">float</span></dt><dd><p>real size of field in microns</p>
+</dd>
+<dt>center<span class="classifier">tuple of floats</span></dt><dd><p>(x, y) coordinates of the Gaussian center in microns</p>
+</dd>
+<dt>sigma<span class="classifier">float</span></dt><dd><p>standard deviation of the Gaussian in microns</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>np.array      : 2D complex array containing field</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="import-and-export">
+<h2>Import and Export<a class="headerlink" href="#import-and-export" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.modes_to_csv">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">modes_to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.modes_to_csv" title="Permalink to this definition"></a></dt>
+<dd><p>Exports the properties of a list of modes to a CSV file. Columns are
+“u”, “w”, “l”, “m”, “beta”, “n_eff”, “core_radius”, “wavelength”, “n_core”, “n_cladding”</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>modes<span class="classifier">list</span></dt><dd><p>A list of instances of Mode class, as returned by find_modes</p>
+</dd>
+<dt>filename<span class="classifier">str</span></dt><dd><p>The path to the CSV file to which the mode data will be written.</p>
+</dd>
+</dl>
+</dd>
+<dt>Keyword Arguments:</dt><dd><dl class="simple">
+<dt>header<span class="classifier">bool, optional</span></dt><dd><p>If True, writes a header row in the CSV file. Defaults to True.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lpmodes.modes_from_csv">
+<span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">modes_from_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.modes_from_csv" title="Permalink to this definition"></a></dt>
+<dd><p>Loads the properties of modes from a CSV file and returns a list of mode objects.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>filename<span class="classifier">str</span></dt><dd><p>The path to the CSV file from which the mode data will be read.</p>
+</dd>
+</dl>
+</dd>
+<dt>Keyword Arguments:</dt><dd><dl class="simple">
+<dt>header<span class="classifier">bool, optional</span></dt><dd><p>If True, skips the header row in the CSV file. Defaults to True.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>list<span class="classifier">A list of instances of Mode class, each corresponding to </span></dt><dd><p>a row in the CSV file.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="using_the_gui.html" class="btn btn-neutral float-left" title="Using the GUI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mode.html" class="btn btn-neutral float-right" title="Mode Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Mike Hughes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
