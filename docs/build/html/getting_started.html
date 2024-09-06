@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Getting Started &mdash; lpmodes  documentation</title>
@@ -125,7 +125,7 @@ indexing, for example the third mode is found using:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mode</span> <span class="o">=</span> <span class="n">modes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The parameters of the mode or stored as fields of the instances, for example:</p>
+<p>The parameters of the mode are stored as fields of the instances, for example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mode</span><span class="o">.</span><span class="n">l</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -137,7 +137,7 @@ for example from of list of modes in <code class="docutils literal notranslate">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">lpmodes</span><span class="o">.</span><span class="n">find_mode_idx</span><span class="p">(</span><span class="n">modes</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>or use <code class="docutils literal notranslate"><span class="pre">find_mode</span></code> to get the mode directly:</p>
+<p>or use <code class="docutils literal notranslate"><span class="pre">find_mode</span></code> to get a referene to the mode directly:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mode</span> <span class="o">=</span> <span class="n">lpmodes</span><span class="o">.</span><span class="n">find_mode</span><span class="p">(</span><span class="n">modes</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -155,11 +155,12 @@ physical units:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">max_plot_radius</span></code> is half of the width or height of the plot. For
 a core radius of 10 microns, a max_plot_radius of 15 microns will ensure all
 the core plus a reasonable extent of the cladding is plotted.</p>
-<p>Ie, if we have a single mode stored in <code class="docutils literal notranslate"><span class="pre">mode</span></code>, then we can call:</p>
+<p>If we have a single mode stored in <code class="docutils literal notranslate"><span class="pre">mode</span></code>, then we can then call:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mode_plot</span> <span class="o">=</span> <span class="n">mode</span><span class="o">.</span><span class="n">plot_amplitude</span><span class="p">(</span><span class="n">grid_size</span><span class="p">,</span> <span class="n">max_plot_radius</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We can then display this, for example, using a matplotlib figure. The package
+<p>which returns the plot as a numpy array. We can then display this, for example,
+using a matplotlib figure. The package
 has a function  <code class="docutils literal notranslate"><span class="pre">ampcol()</span></code> to generate a convenient colormap for displaying
 amplitude plots, with blue for negative values, red for positive values and
 white for zero:</p>
@@ -169,18 +170,18 @@ white for zero:</p>
 </pre></div>
 </div>
 <p>The intensity plot can be obtained as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mode_plot_intensity</span> <span class="o">=</span> <span class="n">mode</span><span class="o">.</span><span class="n">plot_intensity</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mode_plot</span> <span class="o">=</span> <span class="n">mode</span><span class="o">.</span><span class="n">plot_intensity</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mode_plot</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>In this case the <code class="docutils literal notranslate"><span class="pre">ampcol()</span></code> colormap is less useful as all values are
 positive, and so any standard colormap may be used.</p>
-<p>These functions returns the cosine orientation of the modes. The sine orientations
+<p>These functions return the cosine orientation of the modes. The sine orientations
 are obtained using <code class="docutils literal notranslate"><span class="pre">plot_amplitude_rotated()</span></code> and <code class="docutils literal notranslate"><span class="pre">plot_intensity_rotated()</span></code>.
 For l = 0 modes, the two orientations are identical.</p>
 <p>If you would like to plot all the modes, rather than calling the plot functions
-on each mode in the list, you can use the Solution class. This also allows
+on each mode in the list, you can use the <code class="docutils literal notranslate"><span class="pre">Solution</span></code> class. This also allows
 more advanced operations such as coupling in beams and propagating along the
 fibre.</p>
 </section>

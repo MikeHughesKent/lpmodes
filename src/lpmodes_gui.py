@@ -341,7 +341,7 @@ class LPModesGui(QMainWindow):
         QApplication.setOverrideCursor(Qt.WaitCursor)
         
         for idx,mode in enumerate(self.modes):
-            power_in_core = lpmodes.power_in_core(mode, self.core_radius * self.size_factor_spin.value(), self.grid_size_spin.value())
+            power_in_core = lpmodes.power_in_core(mode, self.grid_size_spin.value(), self.core_radius * self.size_factor_spin.value())
             self.tableWidget.setItem(idx, 5, QTableWidgetItem(str(round(power_in_core,3))))
         QApplication.restoreOverrideCursor()
         self.tableWidget.selectRow(0)
@@ -358,9 +358,9 @@ class LPModesGui(QMainWindow):
         
             #if self.solution is not None:
             if self.show_rotated_check.isChecked():
-                 im = self.modes[self.mode_selected].plot_amplitude_rotated(self.core_radius * self.size_factor_spin.value(), self.grid_size_spin.value())
+                 im = self.modes[self.mode_selected].plot_amplitude_rotated(self.grid_size_spin.value(), self.core_radius * self.size_factor_spin.value())
             else:
-                 im = self.modes[self.mode_selected].plot_amplitude(self.core_radius * self.size_factor_spin.value(), self.grid_size_spin.value())
+                 im = self.modes[self.mode_selected].plot_amplitude(self.grid_size_spin.value(), self.core_radius * self.size_factor_spin.value())
 
             if self.display_amplitude_check.isChecked():
                  self.image_display.set_colormap(lpmodes.ampcol())
@@ -430,9 +430,9 @@ class LPModesGui(QMainWindow):
                 
             if filename is not None:  
                 if self.show_rotated_check.isChecked():
-                    im = self.modes[self.mode_selected].plot_amplitude_rotated(self.core_radius * self.size_factor_spin.value(), self.grid_size_spin.value())
+                    im = self.modes[self.mode_selected].plot_amplitude_rotated(self.grid_size_spin.value(), self.core_radius * self.size_factor_spin.value())
                 else:
-                    im = self.modes[self.mode_selected].plot_amplitude(self.core_radius * self.size_factor_spin.value(), self.grid_size_spin.value())
+                    im = self.modes[self.mode_selected].plot_amplitude(self.grid_size_spin.value(), self.core_radius * self.size_factor_spin.value())
                     
                 if self.display_amplitude_check.isChecked():
                     im = im / np.max(np.abs(im)) * 127
@@ -458,9 +458,9 @@ class LPModesGui(QMainWindow):
                 
             if filename is not None: 
                 if self.show_rotated_check.isChecked():                    
-                    stack = lpmodes.plot_modes_amplitude(self.modes, self.core_radius * self.size_factor_spin.value(), self.grid_size_spin.value())[1]
+                    stack = lpmodes.plot_modes_amplitude(self.modes, self.grid_size_spin.value(), self.core_radius * self.size_factor_spin.value())[1]
                 else:
-                    stack = lpmodes.plot_modes_amplitude(self.modes, self.core_radius * self.size_factor_spin.value(), self.grid_size_spin.value())[0]
+                    stack = lpmodes.plot_modes_amplitude(self.modes, self.grid_size_spin.value(), self.core_radius * self.size_factor_spin.value(),)[0]
                     
                 if self.display_amplitude_check.isChecked():
                     stack = stack / np.max(np.abs(stack)) * 127

@@ -27,6 +27,7 @@ Contents
    getting_started
    plotting_coupling
    fibre_properties
+   import_export
    using_the_gui
    function_reference
    mode

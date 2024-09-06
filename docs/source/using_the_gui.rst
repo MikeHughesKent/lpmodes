@@ -9,6 +9,13 @@ ImageDisplayQT widget.
 .. image:: gui.png
   :width: 600
   :alt: Screenshot of lpmodes_gui
+  
+If you have installed via pip, you should be able to run::
+
+    python -m lpmodes_gui.py
+    
+from anywhere. If you have downloaded from github, lpmodes_gui.py is in the
+src folder.      
 
 Parameters of the fibre (NAs, core radius) and wavelength are defined in the 
 top left. Clicking 'Find Modes' then finds solutions. The table in the centre

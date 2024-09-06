@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Using the GUI &mdash; lpmodes  documentation</title>
@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Function Reference" href="function_reference.html" />
-    <link rel="prev" title="Fibre Properties" href="fibre_properties.html" /> 
+    <link rel="prev" title="Import and Export" href="import_export.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,6 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plotting_coupling.html">Plotting, Beam Coupling, Propagation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fibre_properties.html">Fibre Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import and Export</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Using the GUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="function_reference.html">Function Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mode.html">Mode Class</a></li>
@@ -85,7 +86,14 @@
 <p>The lpmodes_gui.py is a Graphical User Interface (GUI) for interacting with
 the lpmodes package. The GUI is based on PyQT5. Modes are displayed using the
 ImageDisplayQT widget.</p>
-<a class="reference internal image-reference" href="_images/gui.png"><img alt="Screenshot of lpmodes_gui" src="_images/gui.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/gui.png"><img alt="Screenshot of lpmodes_gui" src="_images/gui.png" style="width: 600px;" />
+</a>
+<p>If you have installed via pip, you should be able to run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">lpmodes_gui</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>from anywhere. If you have downloaded from github, lpmodes_gui.py is in the
+src folder.</p>
 <p>Parameters of the fibre (NAs, core radius) and wavelength are defined in the
 top left. Clicking ‘Find Modes’ then finds solutions. The table in the centre
 is updated with the mode details. Power in core is not calculated immediately
@@ -102,7 +110,7 @@ mode images saved as tifs using buttons on the left.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="fibre_properties.html" class="btn btn-neutral float-left" title="Fibre Properties" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="import_export.html" class="btn btn-neutral float-left" title="Import and Export" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="function_reference.html" class="btn btn-neutral float-right" title="Function Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

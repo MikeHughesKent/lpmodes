@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fibre Properties &mdash; lpmodes  documentation</title>
@@ -106,7 +106,7 @@ fibre. If the core and cladding refractive indices are defined, for example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num_modes</span> <span class="o">=</span> <span class="n">lpmodes</span><span class="o">.</span><span class="n">est_num_modes</span><span class="p">(</span><span class="n">core_radius</span><span class="p">,</span> <span class="n">n_core</span><span class="p">,</span> <span class="n">n_cladding</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This includes two polarizataion orientations as well as the sine and cosine
+<p>This includes two linear polarization directions as well as the sine and cosine
 orientations of modes with l &gt; 0. The number returned by <code class="docutils literal notranslate"><span class="pre">est_num_modes</span></code>
 should therefore be approximately twice the number of solved modes including
 rotations, i.e. that returned by <code class="docutils literal notranslate"><span class="pre">num_rotated.modes()</span></code>.</p>

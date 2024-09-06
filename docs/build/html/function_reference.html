@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Function Reference &mdash; lpmodes  documentation</title>
@@ -113,16 +113,16 @@ for coupling in beams and propagating along the fibre. See <a class="reference e
 <dt class="sig sig-object py" id="lpmodes.find_modes">
 <span class="sig-prename descclassname"><span class="pre">lpmodes.</span></span><span class="sig-name descname"><span class="pre">find_modes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">core_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_core</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cladding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lpmodes.find_modes" title="Permalink to this definition"></a></dt>
 <dd><p>Finds all LP modes for a step index fibre by finding solutions to the
-equation</p>
-<dl>
-<dt>besselj(l, u) / (u * besselj(l - 1, u))</dt><dd><blockquote>
-<div><p>= besselk(l, w) / (w * besselk(l - 1, w))</p>
-</div></blockquote>
-<dl class="simple">
+equation:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>besselj(l, u) / (u * besselj(l - 1, u))</dt><dd><p>= besselk(l, w) / (w * besselk(l - 1, w))</p>
+</dd>
 <dt>where w = sqrt(v^2-u^2) and </dt><dd><p>v = (2*pi*core_radius/wavelength)*sqrt(core_n^2-cladding_n^2)</p>
 </dd>
 </dl>
-</dd>
+</div></blockquote>
+<dl class="simple">
 <dt>Arguments: </dt><dd><dl class="simple">
 <dt>core_radius<span class="classifier">float</span></dt><dd><p>radius of the core in microns</p>
 </dd>
@@ -217,7 +217,8 @@ the specififed l and m values.</p>
 <dd><p>Returns number of modes when rotations are counted as separate modes.</p>
 <dl class="simple">
 <dt>Arguments:</dt><dd><dl class="simple">
-<dt>modes<span class="classifier">list of instances of Mode</span></dt><dd><p>as returned by find_modes</p>
+<dt>modes<span class="classifier">list </span></dt><dd><p>list of instances of Mode
+as returned by find_modes</p>
 </dd>
 </dl>
 </dd>
