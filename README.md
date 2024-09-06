@@ -1,4 +1,4 @@
-# lpmodes: Python Package for Simulation Multimode Fibres
+# lpmodes: Python Package for Simulation of Multimode Fibres
 
 The lpmodes package is a toolkit for finding, simulating, 
 and manipulating linearly polarized (LP) modes in step index multimode optical fibers. 
